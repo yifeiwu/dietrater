@@ -3,8 +3,19 @@ class FoodItemsController < ApplicationController
 
   # GET /food_items
   # GET /food_items.json
+
+
+
+
   def index
-    @food_items = FoodItem.all
+      @food_items = FoodItem.all
+  if params[:search]
+    #@food_items  = FoodItem.where("name ILIKE ? ", "%#{params[:search]}%")
+    #@food_items  = FoodItem.unique_name.name_like("%#{params[:search]}%")
+@food_items  = FoodItem.name_like("%#{params[:search]}%").order('name')
+  else
+    @food_items = FoodItem.all.order('created_at DESC')
+  end
   end
 
   # GET /food_items/1

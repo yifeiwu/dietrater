@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :foods
+
+  resources :food_entries
+
   resources :food_items
 
   # The priority is based upon order of creation: first created -> highest priority.
