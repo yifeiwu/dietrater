@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food_entry.name %>
+</p>
+
+<p>
+  <strong>Serve size:</strong>
+  <%= @food_entry.serve_size %>
+</p>
+
+<%= link_to 'Edit', edit_food_entry_path(@food_entry) %> |
+<%= link_to 'Back', food_entries_path %>

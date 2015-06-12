@@ -1,31 +1,30 @@
 desc "Imports food db"
 task :mytask=> :environment do
   require 'csv'
-  FoodItem.delete_all 
+  Food.delete_all 
+  Content.delete_all
 
   csv_text = File.read(Rails.root.join('lib', 'tasks',  'seed.csv'), :encoding => 'iso-8859-1')
   csv = CSV.parse(csv_text, :headers => true)
 
-
-calciumstring= "Calcium; Ca"
-
-
   csv.each do |row|
 
+  if Food.exists?(:name => row[0])
+  	@food=Food.find_by_name(row[0]) 
+  else
+	@food=Food.create!({
+		:name => row[0],
+		:serve_size => row[3]+" "+row[4]})
 
+  end
 
+  	@food.contents.create!({
 
-
-		FoodItem.create!({
-
-
-
-      :name => row[0],
-      :serve_size => row[3]+" "+row[4],
       :nut_type=> row[1],
-      :nut_size => row[2],
+      :nut_size => row[2].to_f * row[5].to_f/100
 
      })
+
       
   end
 end
