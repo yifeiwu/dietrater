@@ -159,7 +159,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  devise
+  devise (>= 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
   kaminari (~> 0.16.1)
