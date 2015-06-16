@@ -1,11 +1,13 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: [:show, :edit, :update, :destroy]
+  #before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
-    @contents = Food.first.contents.all
+    @foods = Food.page(params[:page]).per(10)
+   # @contents = Food.contents.first.all
+   
+    @cart_item = current_cart.cart_items.new
   end
 
   # GET /foods/1

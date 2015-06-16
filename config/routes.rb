@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'cart_items/create'
+
+  get 'cart_items/update'
+
+  get 'cart_items/destroy'
+
+  get 'carts/show'
+
   resources :foods
 
-  resources :food_entries
+  resource :cart, only: [:show]
+  resources :cart_items, only: [:create, :update, :destroy]
+  root to: "foods#index"
 
-  resources :food_items
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
