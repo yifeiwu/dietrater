@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Diet Rater</title>
+    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 
   <% if request.ssl? %>
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
@@ -12,7 +14,7 @@
     <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+
   
   <%= csrf_meta_tags %>
 </head>
