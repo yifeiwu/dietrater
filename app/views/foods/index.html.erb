@@ -1,5 +1,12 @@
 <h3 class="text-center">List of Foods</h3>
 
+<%= form_tag(foods_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
+
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
     <% @foods.each do |food| %>

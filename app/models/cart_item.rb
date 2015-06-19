@@ -5,6 +5,7 @@ class CartItem < ActiveRecord::Base
 
 
 
+
 private
   def food_present
     if food.nil?

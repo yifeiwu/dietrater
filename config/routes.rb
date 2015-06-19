@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get 'cart_items/destroy'
 
   get 'carts/show'
+  get 'carts/checkout'
 
   resources :foods
 
-  resource :cart, only: [:show]
+  resource :cart, only: [:show ,:checkout]
   resources :cart_items, only: [:create, :update, :destroy]
   root to: "foods#index"
 
