@@ -15,4 +15,16 @@
   <% @cart_items.each do |cart_item| %>
     <%= render 'carts/cart_row', food: cart_item.food, cart_item: cart_item %>
   <% end %>
+
+<%= link_to "Rate this diet", :controller => :carts, :action => :checkout %>
+
+
+
+
+  
+
+
+
+
+
 <% end %>

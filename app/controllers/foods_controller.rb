@@ -5,6 +5,12 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = Food.page(params[:page]).per(10)
+
+    if params[:search]
+      @foods = Food.name_like("%#{params[:search]}%").order('name').page(params[:page]).per(10)
+    else
+      @foods = Food.all.order('created_at DESC').page(params[:page]).per(10)
+    end
    # @contents = Food.contents.first.all
    
     @cart_item = current_cart.cart_items.new
