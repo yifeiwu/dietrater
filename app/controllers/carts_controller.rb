@@ -6,9 +6,12 @@ class CartsController < ApplicationController
    def checkout
 
    		@cart_items= current_cart.cart_items
-   		nutrients = ["Vitamin D3 (cholecalciferol)","Vitamin C;  total ascorbic acid"]
-   		@total = Array.new(nutrients.length,0)
-  		nutrients.each_with_index do |nutrient,index|
+
+
+   		@nutrients = Content.uniq.pluck(:nut_type)
+   		
+   		@total = Array.new(@nutrients.length,0)
+  		@nutrients.each_with_index do |nutrient,index|
    			@cart_items.each do |cart_item|
 	   			result= cart_item.food.contents.find_by(nut_type: nutrient)
 		   			if result.present?

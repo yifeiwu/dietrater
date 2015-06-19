@@ -2,38 +2,24 @@
 
 <h1>Diet Analysis</h1>
 
-<%= @total %>
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["gauge"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
+<table>
+  <thead>
+    <tr>
+      <th>Nutrient</th>
+      <th>Total Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Vitamin D', <%= @total[0].to_d %>],
-          ['Vitamin A', <%=@total[1].to_d %>],
-         
-        ]);
+  <tbody>
+    <% @total.each_with_index do |total_entry, index| %>
+      <tr>
+        <td><%= @nutrients[index] %></td>
+        <td><%= @total[index] %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-        var options = {
-          width: 400, height: 120,
-          redFrom: 500, redTo: 600,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-
-      }
-    </script>
-  </head>
-  <body>
-    <div id="chart_div" style="width: 400px; height: 120px;"></div>
-  </body>
-</html>
+<br>
