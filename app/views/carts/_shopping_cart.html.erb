@@ -16,7 +16,13 @@
     <%= render 'carts/cart_row', food: cart_item.food, cart_item: cart_item %>
   <% end %>
 
-<%= link_to "Rate this diet", :controller => :carts, :action => :checkout %>
+
+<div class="btn-group">
+
+  <%= link_to "Rate this diet", {:controller => :carts, :action => :checkout},  class: "btn btn-primary"  %>
+</div>
+
+
 
 
 

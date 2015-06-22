@@ -8,45 +8,48 @@ class CartsController < ApplicationController
    		@cart_items= current_cart.cart_items
 
 
-   		@nutrients = Content.uniq.pluck(:nut_type)
+
+
+
+      #Define Nutrient Groups => string, reference values, labels
+      #________________-Vitamins__________
+      vitamins_string = 
+                  ["Vitamin A;  RAE",
+                  "Thiamin",
+                  "Riboflavin",
+                  "Niacin",
+                  "Pantothenic acid",
+                  "Vitamin B-6",
+                  "Folate;  total",
+                  "Vitamin B-12",
+                  "Vitamin C;  total ascorbic acid",
+                  "Vitamin D",
+                  "Vitamin E (alpha-tocopherol)" ]
+      #Reference RDI for 18-30yr old male         
+      vitamins_reference = [900,1.2,1.3,16,5,1.3,400,2.4,90,15,15]
+                            
+
+
+
+
+
+   		@nutrients = vitamins_string
    		
    		@total = Array.new(@nutrients.length,0)
   		@nutrients.each_with_index do |nutrient,index|
-   			@cart_items.each do |cart_item|
+
+   		  @cart_items.each do |cart_item|
+
 	   			result= cart_item.food.contents.find_by(nut_type: nutrient)
 		   			if result.present?
-		   			@total[index]=@total[index]+result.nut_size.to_f
+		   			@total[index]=@total[index]+result.nut_size/vitamins_reference[index]*100
 		   			end
-	 		end
- 
-   			#@my_store = @user.stores.select{|s| s.id == store_id}
-   			#contents.select(:nut_type) { |content| content.nut_type =~ /Fluoride/}
-   			#	result= cart_item.food.contents.select{ |content| content.nut_type =~ /Fluoride/}
-		end
+	 		  end
+		  end
 
 
 
-
-   		# @cart_items.each do |cart_item|
-   		# 	this_food = cart_item.food
-   		# 	puts this_food.contents.first.nut_type
-
-   		# end
-     # @movie = Movie.find(params[:id])
-     # if request.post?
-     #   # It's an update
-     #   @movie.borrower = params[:movie][borrower]
-     #   @movie.borrowed_on = today = Date.today
-     #   @movie.due_on = today + 7
-     #   if @movie.save
-     #     flash[:notice] = 'Movie was successfully created.'
-     #     redirect_to(movies_url)
-     #   else
-     #     render :action => "checkout"
-     #   end
-     # else
-     #   # Render the template, the default
-     # end
+   #end checkout function     
    end
 
    # def return
