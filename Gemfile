@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 group :development do
   gem "better_errors"
 end
+
+
+gem 'chartkick', '~> 1.2.4'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'kaminari', '~> 0.16.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
