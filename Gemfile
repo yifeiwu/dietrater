@@ -5,7 +5,8 @@ group :development do
   gem "better_errors"
 end
 
-
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
 gem 'chartkick', '~> 1.2.4'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'kaminari', '~> 0.16.1'
