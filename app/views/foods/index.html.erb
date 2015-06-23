@@ -5,10 +5,21 @@
 <div class ="col-md-6 col-md-offset-3">
 <div class ="well well-lg" align="center">
 
+
+
 <%= form_tag(foods_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<!-- text field tag=action,args,identifier,placeholdertext... -->
+<%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search food by name", type: "search", data: {autocomplete: foods_autocomplete_food_name_path} %>  
 <%= submit_tag "Search" %>
-<% end %>
+<%end%>
+<script type="text/javascript" charset="utf-8">
+  $('#search').bind('railsAutocomplete.select', function(event, data){
+  $('#search-form').submit()
+  });
+</script>
+
+
+
 </div>
 </div>
 </div>

@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   #before_action :set_food, only: [:show, :edit, :update, :destroy]
-
+  autocomplete :food, :name, :full => true
   # GET /foods
   # GET /foods.json
   def index

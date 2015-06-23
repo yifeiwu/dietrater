@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'foods/autocomplete_food_name'
   get 'cart_items/create'
 
   get 'cart_items/update'
