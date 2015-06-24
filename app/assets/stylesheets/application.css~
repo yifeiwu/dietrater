@@ -14,11 +14,30 @@
  *= require_self
  */
 
-.navbar-brand,
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+}
 
+.navbar-brand,
+.logo-holder{
+  width: 180px;
+  height: 100px;
+}
 .navbar-nav li a {
     line-height: 100px;
     height: 100px;
     padding-top: 0;
     vertical-align: center; 
+}
+
+
+#splash-well {
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.splashtext {
+	color:white;
+	text-align:center;
 }

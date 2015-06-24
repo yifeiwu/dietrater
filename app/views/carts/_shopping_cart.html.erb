@@ -1,3 +1,5 @@
+<div class="container">
+<h1>Items on your plate</h1>
 <% if !@cart_item.nil? && @cart_item.errors.any? %>
   <div class="alert alert-danger">
     <ul>
@@ -17,9 +19,10 @@
   <% end %>
 
 
-<div class="btn-group">
 
-  <%= link_to "Rate this diet", {:controller => :carts, :action => :checkout},  class: "btn btn-primary"  %>
+
+  <%= link_to "Rate this diet", {:controller => :carts, :action => :checkout},  class: "btn btn-primary btn-lg pull-right"  %>
+
 </div>
 
 
