@@ -1,1 +1,8 @@
-<%= link_to "#{current_cart.cart_items.size} Items on Plate", cart_path, class: "btn btn-link" %>
+<%= link_to(cart_path) do %>
+<i class="fa fa-bar-chart"></i>	Click to edit and analyze
+<br>
+<%="#{current_cart.cart_items.size} Items on Plate" %>
+<%end%>
+
+
+

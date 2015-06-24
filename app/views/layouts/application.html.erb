@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Diet Rater</title>
-    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <% if request.ssl? %>
     <!-- <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %> -->
     <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
@@ -18,7 +18,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container" id="topcontainer">
+<div class="container">
+
+
 <div id="top-nav">
 
 
@@ -40,9 +42,6 @@
                 <li><a href="#">The Science</a></li>
                 <li><a href="#">About</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><div class="cart-text"><%= render 'layouts/cart_text' %></div></li>
-            </ul>
         </div>
     </nav>
 </div>
@@ -62,7 +61,7 @@
 <footer>
 
 
-  <p align="center">A Rails Experiement by: Yifei Wu. <a href="https://github.com/yifeiwu">
+  <p align="center">A Rails Experiement by Yifei Wu. <a href="https://github.com/yifeiwu">
   Github</a>.</p>
 
 </footer>

@@ -5,12 +5,15 @@
 <% h = Hash[@nutrients.zip @total] %>
 
 <div class="row">
+ <div class="container" style="height: 600px">
+<div class="col-md-10 col-md-offset-1">
   <!-- Column Chart --> 
-  <div class="container" style="height: 600px">
+ 
 
     
 
     <%= column_chart h,{library: {hAxis: {title: "Vitamins", slantedText:true, slantedTextAngle:60}, vAxis: {title: "Percent Fulfilling RDA", minValue:0, maxValue:130}, title: "Vitamin Analysis", titlePosition:"Out", height:600}} %>
+     </div>
      </div>
      </div>
 

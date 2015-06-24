@@ -28,7 +28,6 @@
     padding-bottom: 0px;
 }
 
-
 #splash-well {
    background-color: rgba(0, 0, 0, 0.4);
 }
@@ -44,5 +43,11 @@
     padding-bottom: 50px;
     margin-bottom:-5px;
     margin-top:-120px;
-
+}
+#fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    text-align:center;
+    margin-right:5px;
 }
