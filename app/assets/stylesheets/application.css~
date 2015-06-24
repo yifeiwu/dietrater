@@ -15,23 +15,10 @@
  */
 
 .navbar-brand,
-.logo-holder{
-  width: 180px;
-  height: 100px;
-}
+
 .navbar-nav li a {
     line-height: 100px;
     height: 100px;
     padding-top: 0;
     vertical-align: center; 
-}
-
-
-#splash-well {
-   background-color: rgba(0, 0, 0, 0.4);
-}
-
-.splashtext {
-	color:white;
-	text-align:center;
 }
