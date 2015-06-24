@@ -1,13 +1,25 @@
-<h3 class="text-center">List of Foods</h3>
+
+<div class="jumbotron" style="background-image: url(<%= asset_path "splash.jpg" %>);">
+<div class="well well-sm" id="splash-well">
+<h2 class="splashtext">IS YOUR DIET GIVING YOU RICKETS?</h1>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<h4 class="splashtext">Weight loss should not come at the expense of vitamin and mineral deficiency. Diet Rater gives you the tools to analyze the micronutrient content of any diet.</h4>
+</div>
+</div>
+<h3 class="splashtext">Save your bones, rate your diet.</h2>
+</div>
+</div>
 
 
+<h3 class="text-center">Add some foods to your plate for analysis</h3>
 <div class ="row">
 <div class ="col-md-6 col-md-offset-3">
-<div class ="well well-lg" align="center">
+<div class ="well well-sm" align="center">
 
 
 
-<%= form_tag(foods_path, :method => "get", id: "search-form") do %>
+<%= form_tag(foods_path, :method => "get", id: "search-form"  )  do %>
 <!-- text field tag=action,args,identifier,placeholdertext... -->
 <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search food by name", type: "search", data: {autocomplete: foods_autocomplete_food_name_path} %>  
 <%= submit_tag "Search" %>
@@ -31,8 +43,10 @@
     <% @foods.each do |food| %>
       <%= render "food_row", food: food, cart_item: @cart_item %>
     <% end %>
+   
+    <%= paginate @foods %>
+	<%= page_entries_info @foods %>
+
   </div>
 </div>
 
-<%= paginate @foods %>
-<%= page_entries_info @foods %>

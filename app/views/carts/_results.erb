@@ -1,4 +1,4 @@
-
+<div class="container">
 
 <h1>Diet Analysis</h1>
 
@@ -6,9 +6,9 @@
 
 <div class="row">
   <!-- Column Chart --> 
-  <div id="container" style="height: 600px">
+  <div class="container" style="height: 600px">
 
-    <h3></h3>
+    
 
     <%= column_chart h,{library: {hAxis: {title: "Vitamins", slantedText:true, slantedTextAngle:60}, vAxis: {title: "Percent Fulfilling RDA", minValue:0, maxValue:130}, title: "Vitamin Analysis", titlePosition:"Out", height:600}} %>
      </div>
@@ -16,8 +16,8 @@
 
 <br>
 
-     <div class="row">
-    <div class="col-md-12">
+    <div class="row">
+    <div class="col-md-8 col-md-offset-2">
     <h6>This chart calculates your intake as a percent of the recommended daily allowance using a 18-30 year old male as reference. Guidelines are as described by the USDA</h6>
     <h6>http://www.nal.usda.gov/fnic/DRI/DRI_Tables/RDA_AI_vitamins_elements.pdf</h6>
     </div>
@@ -33,32 +33,5 @@
 
 
 
-
-
-
-
-
-<!-- 
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Nutrient</th>
-      <th>Total Amount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @total.each_with_index do |total_entry, index| %>
-      <tr>
-        <td><%= @nutrients[index] %></td>
-        <td><%= @total[index] %></td>
-       
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
 
 <br>
