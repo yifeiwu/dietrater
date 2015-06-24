@@ -26,10 +26,13 @@
     vertical-align: center; 
     padding-top: 0px;
     padding-bottom: 0px;
+    font-size:      2em;
+
 }
 
 #splash-well {
    background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .splashtext {
@@ -43,11 +46,20 @@
     padding-bottom: 50px;
     margin-bottom:-5px;
     margin-top:-120px;
+
 }
 #fixedbutton {
     position: fixed;
-    bottom: 0px;
-    right: 0px; 
+    bottom: 1px;
+    right: 5px; 
     text-align:center;
-    margin-right:5px;
 }
+
+#food_well {
+	margin-bottom:1px;
+    margin-top:1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+ 
