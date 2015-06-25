@@ -19,7 +19,7 @@ class CartsController < ApplicationController
                   "Folate, total",
                   "Vitamin B-12",
                   "Vitamin C, total ascorbic acid",
-                  "Vitamin D",
+                  "Vitamin D3 (cholecalciferol)",
                   "Vitamin E (alpha-tocopherol)",
                   "Vitamin K (phylloquinone)"]
       #Reference RDI for 18-30yr old male         
@@ -56,30 +56,30 @@ class CartsController < ApplicationController
 
 
       #Minerals
-            #________________-Vitamins__________
+
       minerals_string = 
                 ["Calcium, Ca",
-                  "Chromium, Cr",
+  
                   "Copper, Cu",
-                  "Iodine, I",
+
                   "Iron, Fe",
                   "Magnesium, Mg",
                   "Manganese, Mn",
-                  "Molybdenum, Mo",
+  
                   "Phosphorus, P",
                   "Selenium, Se",
-                  "Zinc"]
+                  "Zinc, Zn"]
       #Reference RDI for 18-30yr old male         
-      minerals_reference = [1000,35,900,150,8,400,2.3,45,700,55,11]
+      minerals_reference = [1000,0.900,8,400,2.3,700,55,11]
       minerals_labels = 
                 ["Calcium",
-                  "Chromium",
+               
                   "Copper",
-                  "Iodine",
+               
                   "Iron",
                   "Magnesium",
                   "Manganese",
-                  "Molybdenum",
+                 
                   "Phosphorus",
                   "Selenium",
                   "Zinc"]
@@ -102,7 +102,7 @@ class CartsController < ApplicationController
 
 
 #Macros
-            #________________-Vitamins__________
+
       macros_string = 
                 ["Carbohydrate, by difference",
                   "Fiber, total dietary",
@@ -135,7 +135,38 @@ class CartsController < ApplicationController
       @macro_hash = Hash[macros_labels.zip total]
 
 
+#Evils
 
+      evils_string = 
+                ["Fatty acids, total trans",
+                  "Fatty acids, total saturated",
+                  "Cholesterol",
+                  "Sodium, Na",
+                  "Sucrose"]
+      #Reference RDI for 18-30yr old male         
+      evils_reference = [1,1,1000,1000,1]
+      evils_labels = 
+                ["Trans-Fats",
+                  "Saturated Fats",
+                  "Cholesterol",
+                  "Salt",
+                  "Sugar(Sucrose)"]
+                          
+
+      nutrients = evils_string
+      reference = evils_reference
+      total=nil
+      total = Array.new(nutrients.length,0)
+      nutrients.each_with_index do |nutrient,index|
+        @cart_items.each do |cart_item|
+          result= cart_item.food.contents.find_by(nut_type: nutrient)
+            if result.present?
+            total[index]=total[index]+result.nut_size/reference[index]
+            end
+        end
+      end
+
+      @evil_hash = Hash[evils_labels.zip total]
 
 
 
@@ -146,12 +177,7 @@ class CartsController < ApplicationController
    #end checkout function     
    end
 
-   # def return
-   #   @movie = Movie.find(params[:id])
-   #   @movie.borrower = @movie.borrowed_on = @movie.due_on = nil
-   #   @movie.save!
-   #   redirect_to(movies_url)
-   # end
+
 
 
 end
