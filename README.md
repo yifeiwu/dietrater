@@ -1,6 +1,13 @@
 Diet Rater Project
 
-This is my first Rails project. The goal of the application is for users to be able to evaluate their diet for micronutrient completeness. 
+*Work in progress* List of planned additions
+*Ajax search
+*Using the full sr27 database, currently using a test db of around 100 items.
+*Results personalized for different gender/ages
+*User profiles
+
+
+The goal of the application is for users to be able to evaluate their diet for micronutrient completeness. 
 
 A demo of this project can be seen here https://radiant-spire-1962.herokuapp.com/
 
