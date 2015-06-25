@@ -73,10 +73,3 @@
   };
 </script>
 
-<script type="text/javascript">
-  document.getElementById('startButton').onclick = function() {
-    introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
-      window.location.href = '/cart?multipage=true';
-    });
-  };
-</script>

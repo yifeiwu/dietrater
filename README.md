@@ -2,7 +2,6 @@ Diet Rater Project
 
 *Work in progress* List of planned additions
 *Ajax search
-*Using the full sr27 database, currently using a test db of around 100 items.
 *Results personalized for different gender/ages
 *User profiles
 
@@ -21,6 +20,7 @@ Built with
 
 Bootstrap
 Chartkick/Google JSAPI
-Rails 4
-JQuery
 Intro.JS
+JQuery
+PostgreSQL
+Rails 4

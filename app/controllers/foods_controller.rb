@@ -5,7 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
 
-  @foods = Food.where(:id => 1).page(params[:page]).per(10)
+  @foods = Food.all.page(params[:page]).per(1)
     if params[:search]
       @foods = Food.name_like("%#{params[:search]}%").order('name').page(params[:page]).per(10)
     else
