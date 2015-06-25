@@ -4,8 +4,8 @@ task :mytask=> :environment do
   Food.delete_all 
   Content.delete_all
 
-  csv_text = File.read(Rails.root.join('lib', 'tasks',  'seed.csv'), :encoding => 'iso-8859-1')
-  csv = CSV.parse(csv_text, :headers => true)
+  csv_text = File.read(Rails.root.join('lib', 'tasks',  'fulldata.csv'), :encoding => 'iso-8859-1')
+  csv = CSV.parse(csv_text, :col_sep => ";", :headers => true)
 
   csv.each do |row|
 

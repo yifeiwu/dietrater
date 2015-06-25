@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 group :development do
   gem "better_errors"
 end
-
+gem "introjs-rails"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'chartkick', '~> 1.2.4'

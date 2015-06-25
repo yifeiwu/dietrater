@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get '/science' => 'static_pages#science'
+  get '/about' => 'static_pages#about'
+
+
+
   devise_for :users
   get 'foods/autocomplete_food_name'
   get 'cart_items/create'

@@ -1,9 +1,12 @@
 
 
 <!--cart counter-->
-<div id="fixedbutton">
+<div id="fixedbutton" data-step="3" data-intro="When finished, click here!" >
 <div class="cart-text"><%= render 'layouts/cart_text' %></div>
 </div>
+<!---->
+
+
 
 <div class="jumbotron" style="background-image: url(<%= asset_path "splash.jpg" %>);">
 <div class="well well-sm" id="splash-well">
@@ -15,13 +18,16 @@
 </div>
 <h3 class="splashtext">Save your bones, rate your diet.</h2>
 </div>
+<div class="splashtext">
+<a id="startButton" class="btn btn-large btn-success" href="javascript:void(0);">Show me how</a>
+</div>
 </div>
 
 
 <h3 class="text-center">Add some foods to your plate for analysis</h3>
 <div class ="row">
 <div class ="col-md-8 col-md-offset-2">
-<div class ="well well-sm" align="center">
+<div class ="well well-sm" align="center" data-step="1" data-intro="Find some foods you eat from our database" data-position="top">
 
 
 
@@ -45,7 +51,7 @@
 
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8 col-md-offset-2" data-step="2" data-intro="Add foods to your plate" data-position="top">
   <% if @foods.present? %>
     <% @foods.each do |food| %>
       <%= render "food_row", food: food, cart_item: @cart_item %>
@@ -59,3 +65,18 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  document.getElementById('startButton').onclick = function() {
+    introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+      window.location.href = '/cart?multipage=true';
+    });
+  };
+</script>
+
+<script type="text/javascript">
+  document.getElementById('startButton').onclick = function() {
+    introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+      window.location.href = '/cart?multipage=true';
+    });
+  };
+</script>

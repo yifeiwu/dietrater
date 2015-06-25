@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-step="1" data-intro="Check the quantities">
 <h1>Items on your plate</h1>
 <% if !@cart_item.nil? && @cart_item.errors.any? %>
   <div class="alert alert-danger">
@@ -10,22 +10,34 @@
   </div>
 <% end %>
 <% if @cart_items.size == 0 %>
-  <p class="text-center">
+  <p class="text-center" >
     There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
   </p>
 <% else %>
   <% @cart_items.each do |cart_item| %>
     <%= render 'carts/cart_row', food: cart_item.food, cart_item: cart_item %>
   <% end %>
+  <% end %>
+    <div data-step="2" data-intro="Analyze the contents">
+    <%= link_to "Rate this diet", {:controller => :carts, :action => :checkout},  class: "btn btn-primary btn-block btn-lg"  %>
+    </div>
 
 
 
 
-  <%= link_to "Rate this diet", {:controller => :carts, :action => :checkout},  class: "btn btn-primary btn-block btn-lg"  %>
+
 
 </div>
+<script type="text/javascript">
+      if (RegExp('multipage', 'gi').test(window.location.search)) {
+        introJs().setOption('doneLabel', 'Next page').start().oncomplete(function() {
+        window.location.href = '/carts/checkout?multipage=true';
+        introJs().start();
+    }); 
+      };
 
 
+    </script>
 
 
 
@@ -36,4 +48,3 @@
 
 
 
-<% end %>

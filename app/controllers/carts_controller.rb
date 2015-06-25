@@ -10,15 +10,15 @@ class CartsController < ApplicationController
       #Define Nutrient Groups => string, reference values, labels
       #________________-Vitamins__________
       vitamins_string = 
-                  ["Vitamin A;  RAE",
+                  ["Vitamin A,  RAE",
                   "Thiamin",
                   "Riboflavin",
                   "Niacin",
                   "Pantothenic acid",
                   "Vitamin B-6",
-                  "Folate;  total",
+                  "Folate,  total",
                   "Vitamin B-12",
-                  "Vitamin C;  total ascorbic acid",
+                  "Vitamin C,  total ascorbic acid",
                   "Vitamin D",
                   "Vitamin E (alpha-tocopherol)",
                   "Vitamin K (phylloquinone)"]
@@ -58,16 +58,16 @@ class CartsController < ApplicationController
       #Minerals
             #________________-Vitamins__________
       minerals_string = 
-                ["Calcium;  Ca",
-                  "Chromium;  Cr",
-                  "Copper;  Cu",
-                  "Iodine;  I",
-                  "Iron;  Fe",
-                  "Magnesium;  Mg",
-                  "Manganese;  Mn",
-                  "Molybdenum;  Mo",
-                  "Phosphorus;  P",
-                  "Selenium;  Se",
+                ["Calcium,  Ca",
+                  "Chromium,  Cr",
+                  "Copper,  Cu",
+                  "Iodine,  I",
+                  "Iron,  Fe",
+                  "Magnesium,  Mg",
+                  "Manganese,  Mn",
+                  "Molybdenum,  Mo",
+                  "Phosphorus,  P",
+                  "Selenium,  Se",
                   "Zinc"]
       #Reference RDI for 18-30yr old male         
       minerals_reference = [1000,35,900,150,8,400,2.3,45,700,55,11]
@@ -104,14 +104,14 @@ class CartsController < ApplicationController
 #Macros
             #________________-Vitamins__________
       macros_string = 
-                ["Carbohydrate;  by difference",
-                  "Fiber;  total dietary",
+                ["Carbohydrate,  by difference",
+                  "Fiber,  total dietary",
                   "Protein",
                   "Total lipid (fat)"]
       #Reference RDI for 18-30yr old male         
       macros_reference = [1,1,1,1]
       macros_labels = 
-                ["Carbohydrates(including fiber)",
+                ["Carbs+Fiber",
                   "Fiber",
                   "Protein",
                   "Fats",

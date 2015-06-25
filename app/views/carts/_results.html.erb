@@ -1,21 +1,29 @@
 <div class="container">
 <h1>Diet Analysis</h1>
 
-<ul class="nav nav-tabs" data-tabs="tabs">
+<ul class="nav nav-tabs" data-tabs="tabs" data-step="1" data-intro="Click the tabs to view diet info">
   <li><a href="#vitamins_tab" data-toggle="tab">Macronutrients</a></li>
   <li><a href="#minerals_tab" data-toggle="tab">Vitamins</a></li>
   <li><a href="#macros_tab" data-toggle="tab">Minerals</a></li>
   <li><a href="#evils_tab" data-toggle="tab">Evils</a></li>
 </ul>
-<div id="myTabContent" class="tab-content">
+<div id="myTabContent" class="tab-content" >
 
-    <div class="tab-pane fade in" id="vitamins_tab">
+    <div class="tab-pane active fade active in" id="macros_tab">
+    <div class="col-md-10" style="height: 400px">
+
+    <%= bar_chart @macro_hash,{library: {hAxis: {title: "Total Value", minValue:0, maxValue:130 }, vAxis: {title: "Macronutrients", }, title: "Macro Analysis", titlePosition:"Out", height:400}} %>
+
+    </div>
+    </div>
+
+
+	<div class="tab-pane fade in" id="vitamins_tab">
     <div class="col-md-10" style="height: 400px">
 
     <%= bar_chart @vitamin_hash,{library: {hAxis: {title: "Percent of RDA", minValue:0, maxValue:130 }, vAxis: {title: "Vitamin", }, title: "Vitamin Analysis", titlePosition:"Out", height:400}} %>
     </div>
     </div>
-
 
     <div class="tab-pane fade in" id="minerals_tab">
     <div class="col-md-10" style="height: 400px">
@@ -24,13 +32,7 @@
 
     </div>
     </div>
-    <div class="tab-pane active fade in" id="macros_tab">
-    <div class="col-md-10" style="height: 400px">
 
-    <%= bar_chart @macro_hash,{library: {hAxis: {title: "Total Value", minValue:0, maxValue:130 }, vAxis: {title: "Macronutrients", }, title: "Macro Analysis", titlePosition:"Out", height:400}} %>
-
-    </div>
-    </div>
     </div>
 </div>
 
@@ -44,6 +46,11 @@
 
 
 </div>
+<script type="text/javascript">
+  if (RegExp('multipage', 'gi').test(window.location.search)) {
+    introJs().start();
+  }
+</script>
 
 
 
