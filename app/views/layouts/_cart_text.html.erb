@@ -1,8 +1,6 @@
-<%= link_to(cart_path) do %>
-<i class="fa fa-bar-chart"></i>	Click to edit and analyze
+<%= link_to cart_path, class: "btn btn-success active"   do %>
+<i class="fa fa-bar-chart"></i>	Analyze plate of
 <br>
-<%="#{current_cart.cart_items.size} Items on Plate" %>
+<%="#{current_cart.cart_items.size} dishes" %>
 <%end%>
-
-
 

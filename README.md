@@ -16,3 +16,11 @@ Main Features
 1. Most current USDA database of foods with their corresponding nutritional analysis.
 2. Track a list of foods eaten in a day
 3. Charts to display relative completeness of nutritional intake. 
+
+Built with 
+
+Bootstrap
+Chartkick/Google JSAPI
+Rails 4
+JQuery
+

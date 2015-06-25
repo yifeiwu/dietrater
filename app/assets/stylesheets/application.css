@@ -50,7 +50,7 @@
 }
 #fixedbutton {
     position: fixed;
-    bottom: 1px;
+    top: 1px;
     right: 5px; 
     text-align:center;
 }
@@ -60,6 +60,8 @@
     margin-top:1px;
     padding-top: 1px;
     padding-bottom: 1px;
+    vertical-align: middle;
+
 }
 /* bootstrap hack: fix content width inside hidden tabs */
 .tab-content > .tab-pane,
