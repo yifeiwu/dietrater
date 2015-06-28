@@ -4,19 +4,15 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @cart_item = current_cart.cart_items.new
+
   @foods = Food.all.page(params[:page]).per(1)
       if params[:search]
         @foods = Food.name_like("%#{params[:search]}%").order('name').page(params[:page]).per(10)
-        respond_to do |format|
-        format.js 
+      else
       end
-    else
- 
-    end
+puts @foods.count
 
-
-
+    @cart_item = current_cart.cart_items.new
   end
 
   # GET /foods/1
