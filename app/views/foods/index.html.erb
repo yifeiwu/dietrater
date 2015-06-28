@@ -31,7 +31,7 @@
 
 
 
-<%= form_tag(foods_path, :method => "get", id: "search-form"  )  do %>
+<%= form_tag(foods_path, :method => "get", id: "search-form", remote:true  )  do %>
 <!-- text field tag=action,args,identifier,placeholdertext... -->
 <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "Search food by name", type: "search", data: {autocomplete: foods_autocomplete_food_name_path}, :size=>"50" %>  
 <%= submit_tag "Search" %>
@@ -52,16 +52,9 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2" data-step="2" data-intro="Add foods to your plate" data-position="top">
-  <% if @foods.present? %>
-    <% @foods.each do |food| %>
-      <%= render "food_row", food: food, cart_item: @cart_item %>
-    <% end %>
-   
-    <%= paginate @foods %>
-	<%= page_entries_info @foods %>
-	<% else %>
-		<p>No search results</p>
-  <%end %>
+<div id="results">
+  <%= render :partial => 'search_results'%>
+</div>
   </div>
 </div>
 

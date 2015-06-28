@@ -1,0 +1,34 @@
+<% if @foods.present? %>
+    <% @foods.each do |food| %>
+      <div class="well" id="food_well">
+
+  <div class="row">
+    <div class="col-md-8 ">
+      <h4><%= food.name %></small></h4>
+      <h4><strong>Serving Size</strong> <%= food.serve_size %></small></h4>
+    </div>
+    <div class="col-md-4">
+      
+      <%= form_for @cart_item, remote: true do |f| %>
+      <div class="row">
+        <div class="input-group">
+          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+          <div class="input-group-btn">
+            <%= f.hidden_field :food_id, value: food.id %>
+            <%= f.submit "Add to Plate", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    
+  </div>
+</div>
+    <% end %>
+   
+    <%= paginate @foods %>
+	<%= page_entries_info @foods %>
+	<% else %>
+		<p>No search results</p>
+  <%end %>
+
