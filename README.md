@@ -10,12 +10,12 @@
 
 ###Built with 
 
-Bootstrap
-Chartkick/Google JSAPI
-Intro.JS
-JQuery
-PostgreSQL
-Rails 4
+* Bootstrap
+* Chartkick/Google JSAPI
+* Intro.JS
+* JQuery
+* PostgreSQL
+* Rails 4
 
 ####A live demo of this project can be seen here https://radiant-spire-1962.herokuapp.com/
 

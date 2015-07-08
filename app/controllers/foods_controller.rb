@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   #before_action :set_food, only: [:show, :edit, :update, :destroy]
-  autocomplete :food, :name, :full => true
+  autocomplete :food, :name, :full => false
   # GET /foods
   # GET /foods.json
   def index
@@ -10,7 +10,6 @@ class FoodsController < ApplicationController
         @foods = Food.name_like("%#{params[:search]}%").order('name').page(params[:page]).per(10)
       else
       end
-puts @foods.count
 
     @cart_item = current_cart.cart_items.new
   end
