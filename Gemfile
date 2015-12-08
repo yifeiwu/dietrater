@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 
-group :development do
-  gem "better_errors"
-end
+
+gem 'rails_12factor'
 gem "introjs-rails"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
@@ -44,6 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
