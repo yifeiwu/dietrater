@@ -5,7 +5,7 @@ task :mytask=> :environment do
   Content.delete_all
 
   csv_text = File.read(Rails.root.join('lib', 'tasks',  'fulldata.csv'), :encoding => 'iso-8859-1')
-  csv = CSV.parse(csv_text, :col_sep => ";", :headers => true)
+  csv = CSV.parse(csv_text, :col_sep => "\t", :headers => true)
 
   csv.each do |row|
 
